@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>رویش معلمی</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&family=Reem+Kufi:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7efe9;--bg2:#efe3ea;--card:rgba(255,252,248,.82);--ink:#4a3a35;--soft:#8a746b;--rose:#d9a5ac;--rose2:#c4828f;--lilac:#d9cfe6;--sage:#a9b8a0;--sage2:#7f9477;--gold:#c2a15f;--line:rgba(194,161,95,.45);--sh:0 8px 22px rgba(120,80,80,.12);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a2226;--bg2:#31272e;--card:rgba(58,46,52,.85);--ink:#f3e7e2;--soft:#c3aaa6;--line:rgba(194,161,95,.4);--sh:0 8px 22px rgba(0,0,0,.35)}}
+:root[data-theme="dark"]{--bg:#2a2226;--bg2:#31272e;--card:rgba(58,46,52,.85);--ink:#f3e7e2;--soft:#c3aaa6}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;font-family:Vazirmatn,Tahoma,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(160deg,var(--bg),var(--bg2));line-height:1.9;overflow-x:hidden}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+a{color:inherit}
+.ic{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+#splash{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;background:radial-gradient(circle at 20% 15%,#f3d6d9 0,transparent 45%),radial-gradient(circle at 85% 85%,#dcd2ea 0,transparent 45%),#f8f0ea;color:#4a3a35;transition:opacity .8s,transform .8s}
+#splash.out{opacity:0;transform:scale(1.06);pointer-events:none}
+.bism{font-family:"Reem Kufi",Vazirmatn,serif;font-size:clamp(26px,8vw,40px);color:#a8707b;margin:0}
+.dua{max-width:320px;font-size:14px;color:#7c655e;margin:10px 0 30px}
+.orn{color:var(--gold);letter-spacing:8px}
+.logo{font-size:clamp(40px,13vw,64px);font-weight:800;color:#b86f7d;margin:6px 0 0;line-height:1.3}
+.sub{font-size:15px;margin:0}
+.quote{max-width:300px;font-size:13px;color:#7c655e;margin:18px 0 26px;font-style:italic}
+.cta{background:linear-gradient(135deg,var(--rose2),#b9707e);color:#fff;padding:14px 38px;border-radius:30px;font-weight:600;font-size:17px;box-shadow:0 8px 20px rgba(185,112,126,.4);min-height:48px}
+.cta:active{transform:scale(.96)}
+#app{max-width:760px;margin:0 auto;padding:16px 16px 96px;display:none}
+#app.on{display:block;animation:fade .7s}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero h1{font-size:28px;margin:6px 0 0;color:var(--rose2);font-weight:800}
+.hero p{margin:2px 0 12px;color:var(--soft);font-size:14px}
+.prog{background:var(--card);border:1px dashed var(--line);border-radius:18px;padding:12px 14px;box-shadow:var(--sh)}
+.bar{height:10px;border-radius:9px;background:rgba(169,184,160,.35);overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--sage),var(--rose));border-radius:9px;transition:width .6s}
+.srch{width:100%;margin:14px 0;padding:12px 16px;border-radius:24px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:15px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{position:relative;text-align:right;background:var(--card);border-radius:20px 20px 20px 6px;padding:16px 12px 12px;box-shadow:var(--sh);border:1px solid var(--line);min-height:150px;transition:transform .25s}
+.tile:hover,.tile:active{transform:translateY(-3px) rotate(-.6deg)}
+.tile::before{content:"";position:absolute;top:-6px;right:50%;width:46px;height:14px;margin-right:-23px;background:var(--c);opacity:.7;transform:rotate(-3deg);border-radius:2px}
+.tile .ib{width:44px;height:44px;border-radius:14px;background:var(--c);display:grid;place-items:center;color:#5a4040;margin-bottom:6px}
+.tile b{display:block;font-size:15px;line-height:1.5}
+.tile small{color:var(--soft);font-size:12px;line-height:1.6;display:block}
+.tile .st{position:absolute;left:10px;top:10px;font-size:11px;color:var(--sage2);font-weight:600}
+.back{display:inline-flex;align-items:center;gap:6px;color:var(--rose2);font-weight:600;padding:10px 4px;min-height:44px}
+.pg h2{font-size:25px;margin:0;color:var(--rose2)}
+.pg .lead{color:var(--soft);font-size:14px;margin:2px 0 14px}
+.paper{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin:10px 0;box-shadow:var(--sh)}
+.paper h3{margin:0 0 4px;font-size:16px}
+.paper p{margin:4px 0;font-size:14px}
+.ph{color:var(--soft);font-size:13px;border-bottom:1px dashed var(--line);padding:2px 0}
+.img{height:90px;border-radius:12px;background:repeating-linear-gradient(45deg,var(--lilac) 0 10px,#e9dfef 10px 20px);display:grid;place-items:center;color:#8a746b;font-size:12px;margin-bottom:8px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:10px 0;box-shadow:var(--sh);overflow:hidden}
+summary{padding:14px;font-weight:600;cursor:pointer;list-style:none;min-height:48px;display:flex;justify-content:space-between}
+summary::after{content:"＋";color:var(--gold)}details[open] summary::after{content:"－"}
+details>div{padding:0 14px 14px}
+.chk{display:flex;gap:12px;align-items:center;padding:10px 4px;border-bottom:1px dotted var(--line);cursor:pointer;min-height:48px;font-size:15px}
+.chk input{width:22px;height:22px;accent-color:var(--rose2);flex:none}
+.chk input:checked+span{text-decoration:line-through;color:var(--soft)}
+.tag{font-size:10px;padding:1px 8px;border-radius:9px;background:var(--rose);color:#fff;margin-right:6px}
+.tag.s{background:var(--sage2)}
+.pct{font-weight:800;color:var(--rose2)}
+.msg{background:linear-gradient(135deg,var(--lilac),#f5d9dc);color:#4a3a35;border-radius:16px;padding:14px;margin:14px 0;text-align:center;font-size:14px}
+.btn{display:inline-block;padding:10px 22px;border-radius:22px;background:var(--sage2);color:#fff;text-decoration:none;font-size:14px;min-height:44px;margin-top:6px}
+.btn.off{background:rgba(138,116,107,.35);pointer-events:none}
+.btn.g{background:none;border:1px solid var(--rose2);color:var(--rose2)}
+.foot{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+nav{position:fixed;bottom:0;left:0;right:0;z-index:20;display:none;justify-content:space-around;background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px))}
+nav.on{display:flex}
+nav button{display:flex;flex-direction:column;align-items:center;font-size:11px;padding:4px 14px;min-height:48px;color:var(--soft)}
+nav button.a{color:var(--rose2);font-weight:600}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#5a4545;color:#fff;padding:10px 18px;border-radius:20px;font-size:13px;z-index:60;opacity:0;transition:opacity .4s;pointer-events:none;max-width:90%;text-align:center}
+.toast.on{opacity:1}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<section id="splash">
+ <div class="orn">❀ ✦ ❀</div>
+ <p class="bism">به نام خداوند جان و خرد</p>
+ <p class="dua">به نام او که چراغ دانایی را در دل‌ها روشن کرد و رسالت آموختن را به انسان سپرد.</p>
+ <h1 class="logo">رویشِ معلمی</h1>
+ <p class="sub">راهنمای خوش‌آمدگویی دانشجومعلمان جدیدالورود</p>
+ <p class="quote">برای روزهای تازه، آدم‌های تازه و تجربه‌هایی که قرار است از یادمان نروند...</p>
+ <button class="cta" id="go">شروع ماجرا ✨</button>
+</section>
+<main id="app"></main>
+<nav id="nav"></nav>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== داده‌ها: برای ویرایش نام‌ها، تصاویر، توضیحات و لینک‌ها فقط این بخش را تغییر دهید ===== */
+const P="توضیحات", L="لینک کانال";
+const SECTIONS=[
+{id:"s1",t:"شروع یک قصه تازه",d:"پیام همدلانه قدیمی‌ها",ic:"sprout",c:"#f3d6d9",type:"text",
+ lead:"چرا این دفترچه ساخته شد؟",
+ blocks:[["هدف این دفترچه","این دفترچه کمک می‌کند روزهای اول دانشگاه را راحت‌تر و آرام‌تر شروع کنی: بدانی کجا چه خبر است، با چه کسانی آشنا شوی و چه کارهایی پیش رو داری."],["پیام دانشجویان قدیمی","[متن پیام دانشجویان ورودی‌های قبل را اینجا بنویسید]"]]},
+{id:"s2",t:"خانه دوم من",d:"آشنایی با مکان‌های دانشگاه",ic:"home",c:"#d9cfe6",type:"acc",lead:"مکان‌ها را بشناس",
+ items:["ساختمان‌های آموزشی","کلاس‌ها","کتابخانه","سلف","نمازخانه","سالن ورزشی","امور دانشجویی","آموزش","خوابگاه","سایر مکان‌های مهم"].map(n=>({t:n,img:1,rows:[["توضیح",P],["موقعیت مکانی","موقعیت"]],map:""}))},
+{id:"s3",t:"آدم‌های این خانه",d:"مسئولان و عوامل دانشگاه",ic:"users",c:"#cfdccb",type:"acc",lead:"با مسئولان آشنا شو",
+ items:["ریاست","معاونت‌ها","آموزش","امور دانشجویی","امور فرهنگی","مسئول خوابگاه","سایر مسئولان"].map(n=>({t:n,img:1,rows:[["نام و نام خانوادگی","نام مسئول"],["سمت و مسئولیت","سمت"],["حوزه فعالیت",P],["راه ارتباطی","راه ارتباطی"]]}))},
+{id:"s4",t:"اینجا جای توست!",d:"فرصت‌های فعالیت دانشجویی",ic:"star",c:"#f5e3c6",type:"acc",lead:"یک فعالیت پیدا کن؛ مهارت‌هایت همان‌جا رشد می‌کنند",
+ items:[["انجمن‌های علمی","بحث و تبادل نظر با هم‌رشته‌ای‌ها؛ مهارت تحلیل و ارائه."],["کانون‌های فرهنگی","ساختن برنامه‌های فرهنگی با هم؛ مهارت کار تیمی و سازماندهی."],["فعالیت‌های هنری","جایی برای دیده‌شدن خلاقیتت؛ مهارت بیان و ایده‌پردازی."],["فعالیت‌های ورزشی","نشاط و تیم‌سازی؛ مهارت انضباط و همکاری."],["نشریات دانشجویی","نوشتن و صدای تو شدن؛ مهارت قلم و تفکر انتقادی."],["تشکل‌های دانشجویی","مشارکت در تصمیم‌ها؛ مهارت گفت‌وگو و مسئولیت‌پذیری."],["گروه‌های داوطلبانه","خدمت‌رسانی در کنار هم‌دانشگاهی‌ها؛ مهارت همدلی."],["فعالیت‌های علمی و پژوهشی","پرسیدن و کشف کردن؛ مهارت پژوهش و نوشتن مقاله."]].map(a=>({t:a[0],rows:[["چرا بپیوندم؟",a[1]],["نحوه پیوستن","[توضیح نحوه عضویت]"]]}))},
+{id:"s5",t:"قرارهای بزرگ‌تر از ما",d:"آشنایی با بسیج دانشجویی",ic:"heart",c:"#f3d6d9",type:"acc",lead:"دعوتی صمیمی به همراهی",
+ items:["فعالیت‌های فرهنگی","فعالیت‌های جهادی","فعالیت‌های تربیتی","برنامه‌های مناسبتی","اردوها و برنامه‌های جمعی","گروه‌ها و فرصت‌های عضویت"].map(n=>({t:n,rows:[["درباره این بخش",P],["نحوه همراهی","[توضیح]"]]}))},
+{id:"s6",t:"چمدان زندگی دانشجویی",d:"چک‌لیست وسایل خوابگاهی",ic:"bag",c:"#cfdccb",type:"check",key:"bag",done:"چمدانت کامل شد! آماده‌ای برای شروع 🎒",
+ groups:[["وسایل شخصی و بهداشتی",["!مسواک و خمیردندان","!شامپو و صابون","!حوله","شانه و لوازم مراقبتی"]],["لباس و پوشاک",["!لباس روزمره","!لباس راحتی","!کفش و دمپایی","لباس فصل سرما/گرما"]],["وسایل خواب",["!ملحفه و روبالشی","!پتو یا لحاف","بالش شخصی","چشم‌بند"]],["لوازم تحریر و آموزشی",["!دفتر و خودکار","!کارت دانشجویی","کیف و کوله","ماژیک و هایلایتر"]],["وسایل الکترونیکی",["!شارژر موبایل","!گوشی","لپ‌تاپ یا تبلت","چند‌راهی (مطابق مقررات)"]],["وسایل نظافت",["مایع ظرفشویی","دستمال و اسفنج","کیسه زباله"]],["مدارک و وسایل ضروری",["!اصل و کپی مدارک هویتی","!مدارک ثبت‌نام","!داروهای شخصی","عکس پرسنلی"]],["خوراکی‌ها و اقلام مصرفی مجاز",["لیوان و قاشق و بشقاب","چای و خوراکی‌های مجاز","قمقمه"]]]},
+{id:"s7",t:"اولین قرار ما",d:"برنامه‌های ویژه جدیدالورودها",ic:"cal",c:"#d9cfe6",type:"events",lead:"اطلاعات پس از اعلام رسمی تکمیل می‌شود",
+ items:["دوره آشنایی با دانشگاه","جشن استقبال از ورودی‌های جدید","برنامه‌های فرهنگی","دورهمی‌های دانشجویی","کارگاه‌های آموزشی"].map(n=>({t:n,date:"",time:"",place:"",link:""}))},
+{id:"s8",t:"از اینجا باخبر باش!",d:"کانال‌ها و صفحات کاربردی",ic:"bell",c:"#f5e3c6",type:"links",lead:"پیوندها را در داده‌ها قرار دهید",
+ items:["کانال رسمی دانشگاه","کانال اطلاع‌رسانی آموزش","امور دانشجویی","خوابگاه","معاونت فرهنگی","بسیج دانشجویی","انجمن‌های علمی","سایر کانال‌های موردنیاز"].map(n=>({t:n,d:"توضیح درباره کاربرد این کانال",link:""}))},
+{id:"s9",t:"کوله‌بار روزهای اول",d:"کارهای هفته‌های نخست",ic:"check",c:"#f3d6d9",type:"check",key:"first",done:"قرار نیست از همان روز اول همه‌چیز را بدانی؛ کافی است با اشتیاق شروع کنی و قدم‌به‌قدم پیش بروی.",
+ groups:[["کارهای هفته‌های اول",["آشنایی با محیط دانشگاه","پیدا کردن محل کلاس‌ها","آشنایی با سامانه‌های آموزشی","شناخت مسئولان و بخش‌های مختلف","عضویت در کانال‌های ضروری","آشنایی با برنامه‌های دانشجویی","بررسی قوانین خوابگاه","آشنایی با هم‌کلاسی‌ها","اطلاع از برنامه‌های ورودی‌های جدید"]]]}
+];
+const IC={sprout:"M12 21v-8M12 13c0-4 3-6 7-6 0 4-3 6-7 6zM12 15c0-3-2-5-6-5 0 3 2 5 6 5z",home:"M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6",users:"M9 11a3 3 0 100-6 3 3 0 000 6zM3 20c0-3 3-5 6-5s6 2 6 5M16 6a3 3 0 010 5M18 15c2 .5 3 2 3 5",star:"M12 3l2.5 6 6.5.5-5 4.3 1.6 6.4-5.6-3.4L6.4 20.2 8 13.8 3 9.5 9.5 9z",heart:"M12 20s-8-5-8-11a4.5 4.5 0 018-2.7A4.5 4.5 0 0120 9c0 6-8 11-8 11z",bag:"M5 8h14l-1 12H6zM9 8V6a3 3 0 016 0v2",cal:"M4 6h16v14H4zM4 10h16M8 3v4M16 3v4",bell:"M6 17v-6a6 6 0 0112 0v6l2 2H4zM10 21h4",check:"M5 12l4 4 10-10",book:"M4 5c3-1 6-1 8 1 2-2 5-2 8-1v14c-3-1-6-1-8 1-2-2-5-2-8-1z",back:"M9 6l6 6-6 6"};
+const svg=n=>`<svg class="ic" viewBox="0 0 24 24"><path d="${IC[n]}"/></svg>`;
+const MSG=["آفرین، قدم اول برداشته شد 🌱","چه شروع قشنگی!","داری عالی پیش می‌روی ✨","یک قدم دیگر به دانشگاه نزدیک‌تر شدی"];
+
+/* ===== وضعیت ===== */
+let S={visited:{},ck:{}};
+try{S=Object.assign(S,JSON.parse(localStorage.getItem("royesh")||"{}"))}catch(e){}
+const save=()=>{try{localStorage.setItem("royesh",JSON.stringify(S))}catch(e){}};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("on"),2200)}
+const items=s=>s.groups.flatMap((g,gi)=>g[1].map((x,i)=>({id:s.key+gi+"_"+i,x})));
+const pct=s=>{const a=items(s);return Math.round(a.filter(o=>S.ck[o.id]).length/a.length*100)};
+
+/* ===== نمایش ===== */
+function home(q=""){
+ const n=Object.keys(S.visited).length, pr=Math.round(n/SECTIONS.length*100);
+ const list=SECTIONS.filter(s=>(s.t+s.d).includes(q));
+ return `<div class="hero"><div class="orn" style="font-size:12px">❀ رویشِ معلمی ❀</div><h1>به دانشگاهت خوش اومدی!</h1><p>این میز راهنمای توست؛ هر بخش را هر وقت دوست داشتی باز کن.</p></div>
+ <div class="prog"><div style="display:flex;justify-content:space-between;font-size:13px"><span>آشنایی با دانشگاه</span><span class="pct">${pr}٪</span></div><div class="bar"><i style="width:${pr}%"></i></div></div>
+ <input class="srch" id="q" type="search" placeholder="جست‌وجو میان بخش‌ها..." value="${esc(q)}">
+ <div class="grid" id="grid">${list.map(tile).join("")||'<p class="ph">بخشی پیدا نشد. عبارت دیگری را امتحان کن.</p>'}</div>`;
+}
+function tile(s){
+ const st=s.type==="check"?pct(s)+"٪":(S.visited[s.id]?"✓ دیده شد":"");
+ return `<button class="tile" style="--c:${s.c}" onclick="location.hash='${s.id}'"><span class="st">${st}</span><div class="ib">${svg(s.ic)}</div><b>${s.t}</b><small>${s.d}</small></button>`;
+}
+function rows(r){return r.map(a=>`<div class="ph">${a[0]}: ${esc(a[1])}</div>`).join("")}
+function body(s){
+ if(s.type==="text")return s.blocks.map(b=>`<div class="paper"><h3>${b[0]}</h3><p>${esc(b[1])}</p></div>`).join("");
+ if(s.type==="acc")return s.items.map(o=>`<details><summary>${o.t}</summary><div>${o.img?'<div class="img">جای تصویر</div>':""}${rows(o.rows)}${o.map!==undefined?'<div class="ph">نقشه: [لینک نقشه]</div>':""}</div></details>`).join("");
+ if(s.type==="events")return s.items.map(o=>`<div class="paper"><div class="img">جای تصویر</div><h3>${o.t}</h3>${rows([["تاریخ",o.date||"تاریخ"],["ساعت",o.time||"ساعت"],["مکان",o.place||"مکان"]])}${o.link?`<a class="btn" href="${esc(o.link)}" target="_blank" rel="noopener">ثبت‌نام / جزئیات</a>`:'<span class="btn off">به‌زودی</span>'}</div>`).join("");
+ if(s.type==="links")return s.items.map(o=>`<div class="paper"><h3>${o.t}</h3><p>${o.d}</p>${o.link?`<a class="btn" href="${esc(o.link)}" target="_blank" rel="noopener">ورود به کانال</a>`:`<span class="btn off">${L}</span>`}</div>`).join("");
+ if(s.type==="check"){
+  let k=0;
+  const g=s.groups.map((gr,gi)=>`<div class="paper"><h3>${gr[0]}</h3>${gr[1].map((x,i)=>{const id=s.key+gi+"_"+i,e=x[0]==="!",t=e?x.slice(1):x;return`<label class="chk"><input type="checkbox" data-id="${id}" ${S.ck[id]?"checked":""}><span>${t}${s.key==="bag"?`<span class="tag ${e?"":"s"}">${e?"ضروری":"پیشنهادی"}</span>`:""}</span></label>`}).join("")}</div>`).join("");
+  return `<div class="prog"><div style="display:flex;justify-content:space-between"><span>میزان تکمیل</span><span class="pct" id="pc">${pct(s)}٪</span></div><div class="bar"><i id="pb" style="width:${pct(s)}%"></i></div></div>${g}<div id="fin" class="msg" style="display:${pct(s)==100?"block":"none"}">${s.done}</div><button class="btn g" id="rst">بازنشانی چک‌لیست</button>`;
+ }
+}
+function page(s){
+ const i=SECTIONS.indexOf(s),nx=SECTIONS[i+1];
+ return `<div class="pg"><button class="back" onclick="location.hash=''">${svg("back").replace("<svg","<svg style='transform:scaleX(-1);width:18px'")}بازگشت به خانه</button><h2>${s.t}</h2><p class="lead">${s.lead||s.d}</p>${body(s)}<div class="foot"><button class="btn g" onclick="location.hash=''">خانه</button>${nx?`<button class="btn" onclick="location.hash='${nx.id}'">بخش بعدی: ${nx.t}</button>`:""}</div></div>`;
+}
+function bindCheck(s){
+ document.querySelectorAll(".chk input").forEach(el=>el.onchange=()=>{
+  S.ck[el.dataset.id]=el.checked;save();const p=pct(s);
+  $("#pc").textContent=p+"٪";$("#pb").style.width=p+"%";$("#fin").style.display=p==100?"block":"none";
+  if(p==100)toast(s.done);else if(el.checked&&Math.random()<.2)toast(MSG[Math.floor(Math.random()*MSG.length)]);
+ });
+ $("#rst").onclick=()=>{if(!confirm("چک‌لیست بازنشانی شود؟"))return;items(s).forEach(o=>delete S.ck[o.id]);save();render()};
+}
+function render(){
+ const h=location.hash.slice(1),s=SECTIONS.find(x=>x.id===h);
+ $("#app").innerHTML=s?page(s):home();
+ if(s){S.visited[s.id]=1;save();if(s.type==="check")bindCheck(s)}
+ else{const q=$("#q");q.oninput=()=>{const v=q.value.trim();$("#grid").innerHTML=SECTIONS.filter(x=>(x.t+x.d).includes(v)).map(tile).join("")||'<p class="ph">بخشی پیدا نشد.</p>'}}
+ window.scrollTo(0,0);
+ document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("a",b.dataset.h===(s?s.id:"")));
+}
+$("#nav").innerHTML=[["","home","خانه"],["s1","book","راهنما"],["s6","check","چک‌لیست"],["s7","cal","برنامه‌ها"]].map(a=>`<button data-h="${a[0]}" onclick="location.hash='${a[0]}'">${svg(a[1])}${a[2]}</button>`).join("");
+$("#go").onclick=()=>{$("#splash").classList.add("out");$("#app").classList.add("on");$("#nav").classList.add("on");setTimeout(()=>$("#splash").remove(),800);render()};
+window.addEventListener("hashchange",()=>{if($("#app").classList.contains("on"))render()});
+</script>
+</body>
+</html>
